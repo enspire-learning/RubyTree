@@ -812,11 +812,7 @@ module Tree
     # @see http://stackoverflow.com/a/6880638/273808
     def as_json(options = {})
 
-        json_hash = {
-          "name"         => name,
-          "content"      => content,
-          JSON.create_id => self.class.name
-        }
+        json_hash = content
 
         if has_children?
           json_hash["children"] = children
